@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-heading: 'Staatliches', sans-serif;
+  --ff-texting: 'Roboto', sans-serif;
+  --ff-footer: 'Open Sans', sans-serif;
+  --ff-textingp: 'Palanquin', sans-serif;
+
+  --hue: 218;
+  --bg-primary-heading: hsl(var(--hue), 17%, 62%, 1);
+  --bg-secondary-heading: hsl(275, 18%, 79%, 1);
+
+  --fc-texting: hsl(0, 0%, 100%, 1);
+  --fc-texting-main: hsl(274, 84%, 12%, 1);
+  --fc-primay: hsl(312, 91%, 96%, 1);
+  --fc-text-paleta: hsl(232, 17%, 35%, 1);
+
+
+  font-size: 62,5%;
+  --fs-body: 2rem;
+  --fs-heading: 3rem;
+}
+
+body {
+  font-size: var(--ff-texting);
+  font-weight: 400;
+}
+
+.page {
+  margin: 0 auto;
+}
+
+header {
+ font-family: var(--ff-heading);
+
+ text-align: center;
+ background: var(--bg-primary-heading);
+
+ padding-bottom: 3.2rem;
+}
+
+header img {
+  margin: 3.2rem auto;
+}
+
+header h1 {
+  font-weight: 400;
+  font-size: var(--fs-heading);  
+
+  color: var(--fc-texting);
+
+  background-color: var(--bg-secondary-heading);
+
+  letter-spacing: 0.05em;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+header p {
+  margin: 3rem 2rem;
+
+  font-family: var(--ff-texting);
+
+  color: var(--fc-texting);
+
+  text-align: center;
+  font-size: var(--fs-body);
+  font-weight: 400;
+
+  line-height: 2rem;
+}
+
+main {
+  display: grid;
+  gap: 3.2rem;
+
+  padding-bottom: 2rem;
+
+  text-align: center;
+  background-color: hsl(233, 100%, 97%, 1);
+}
+
+main p {
+  font-family:var(--ff-textingp);
+
+  color: var(--fc-texting-main);
+
+  text-align: center;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.5rem;
+
+  padding: 2rem;
+  text-align: center;
+  margin: auto 2rem;
+}
+
+.card {
+  position: relative;
+  font-family: var(--ff-heading);
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.card img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  
+  border-radius: 2.0rem;
+  transition: all 220ms;
+
+  animation: downtop 700ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.4;
+
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  font-size: var(--ff-heading);
+  font-weight: 400;
+
+  border-radius: 2rem;
+  background-color: var(--fc-primay);
+
+  color: var(--fc-text-paleta);
+
+  padding: 1rem;
+  height: 1.5rem;
+
+  display: inline-flex;
+  align-items: center;
+
+  animation: topdown 700ms 350ms backwards;
+}
+
+footer {
+  padding-bottom: 2rem;
+}
+
+footer p {
+  text-align: center;
+
+  font-size: var(--ff-footer);
+  line-height: 2.8rem;
+  color: var(--fc-text-paleta);
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 899px) {
+  header p {
+    display: none;
+  }
+
+  header h1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  main .images div:nth-child(3) {
+    display: none;
+  }
+
+  main .images div:nth-child(4) {
+    display: none;
+  }
+
+}
+
+@media (min-width:900px) {
+  
+  .page {
+    display: flex;
+    max-width: auto;
+  }
+
+  .page header {
+    width: 37rem;
+    height: auto;
+  }
+
+  header h1 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  main {
+    width: 128rem;
+    height: 72rem;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "A B C"
+    "D B F"
+    "D E F"
+    ;
+   
+  }
+
+
+  main .text {
+    display: none;
+  }
+
+  main div:nth-child(1) {
+    grid-area: A;
+  }
+
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+
+  main div:nth-child(4) {
+    grid-area: D;
+  }
+
+  main div:nth-child(5) {
+    grid-area: E;
+  }
+
+  main div:nth-child(6) {
+    grid-area: F;
+  }
+
+  .card img {
+    max-width: 22rem;
+  }
+
+}
+

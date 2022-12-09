@@ -254,23 +254,23 @@ footer a {
     grid-area: A;
   }
 
-  images .img div:nth-child(2) {
+  .images .img div:nth-child(2) {
     grid-area: B;
   }
 
-  images .img div:nth-child(3) {
+  .images .img div:nth-child(3) {
     grid-area: C;
   }
 
-  images .img div:nth-child(4) {
+  .images .img div:nth-child(4) {
     grid-area: D;
   }
 
-  images .img div:nth-child(5) {
+  .images .img div:nth-child(5) {
     grid-area: E;
   }
 
-  images .img div:nth-child(6) {
+  .images .img div:nth-child(6) {
     grid-area: F;
   }
 

@@ -74,9 +74,6 @@ header p {
 }
 
 main {
-  display: grid;
-  gap: 3.2rem;
-
   padding-bottom: 2rem;
 
   text-align: center;
@@ -210,7 +207,6 @@ footer a {
   
   .page {
     display: flex;
-    max-width: auto;
   }
 
   .page header {
@@ -224,46 +220,57 @@ footer a {
   }
 
   main {
-    width: 128rem;
-    height: 72rem;
+    display: flex;
+    flex-direction: column;
 
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-
-    grid-template-areas: 
-    "A B C"
-    "D B F"
-    "D E F"
-    ;
-   
+    padding: 5.5rem 8.1rem 1rem;
+    
+    width: 100%;
+    height: 89rem;   
   }
-
 
   main .text {
     display: none;
   }
 
-  main div:nth-child(1) {
+ 
+  .images {
+    display: grid;
+    
+    grid-template-areas: 
+    'A B C'
+    'D B F'
+    'D E F';
+
+    gap: 3.2rem;
+    
+    margin: auto;
+    padding: 3rem 6rem;
+    width: 70vw;
+    height: 100%;
+  }  
+
+  .images .img div:nth-child(1) {
     grid-area: A;
   }
 
-  main div:nth-child(2) {
+  images .img div:nth-child(2) {
     grid-area: B;
   }
 
-  main div:nth-child(3) {
+  images .img div:nth-child(3) {
     grid-area: C;
   }
 
-  main div:nth-child(4) {
+  images .img div:nth-child(4) {
     grid-area: D;
   }
 
-  main div:nth-child(5) {
+  images .img div:nth-child(5) {
     grid-area: E;
   }
 
-  main div:nth-child(6) {
+  images .img div:nth-child(6) {
     grid-area: F;
   }
 
@@ -272,4 +279,3 @@ footer a {
   }
 
 }
-
